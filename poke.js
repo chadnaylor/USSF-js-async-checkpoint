@@ -6,12 +6,23 @@ var getTypes = () => {
         throw Error('NO INPUT SPECIFIED.')
     }
     let data = fs.readFileSync(path.resolve(__dirname, process.argv[0]), 'utf8')
-    let result = []
-
+    let pokemonNames = data.split('\n')
+    let requests = []
+    let result
     return new Promise((resolve, reject) => {
-        resolve([])
+        pokemonNames.forEach((pokemonName) => {
+            requests.push(fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`))
+        })
+        Promise.all(requests).then((pokemonArray) => {
+            result = pokemonArray.map((pokemonJson) => {
+                return { 'name': pokemonJson.species.name, 'type': 'none' }
+            })
+        })
+        resolve(result)
+
     })
-    //fetch(`https://pokeapi.co/api/v2/pokemon/${}`)
+
+
 }
 
 module.exports = { getTypes }
