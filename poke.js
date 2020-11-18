@@ -17,7 +17,7 @@ var getTypes = () => {
         })
         Promise.all(requests).then((pokemonArray) => {
             result = pokemonArray.map((pokemonJson) => {
-                return { 'name': pokemonJson.species.name, 'type': pokemonJson.types.reduce((acc, type) => `${acc}, ${type.type.name}`), ''}
+                return { 'name': pokemonJson.species.name, 'type': pokemonJson.types.map((type) => type.type.name).reduce((acc, type) => `${acc}, ${type}`) }
             })
             resolve(result)
         })
