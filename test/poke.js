@@ -1,12 +1,16 @@
 var assert = require('assert');
 var poke = require('../poke');
-const testInput = 'charizard\npikachu';
-
 
 describe('Poke', function () {
     describe('getTypes()', function () {
-        it('should be a function', function () {
-            assert.equal('function', typeof poke.getTypes);
+        it('should be a function', () => {
+            assert.strictEqual('function', typeof poke.getTypes);
         });
+        it('should throw error and give input file instructions if no input', () => {
+            process.argv = []
+            assert.throws(() => poke.getTypes(), Error,
+                'NO INPUT SPECIFIED.'
+            )
+        })
     });
 });

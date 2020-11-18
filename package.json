@@ -7,6 +7,9 @@
     "mocha": "^8.2.1",
     "node-fetch": "^2.6.1"
   },
+  "bin": {
+    "poke": "poke.js"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "mocha"
