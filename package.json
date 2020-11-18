@@ -4,11 +4,12 @@
   "description": "",
   "main": "poke.js",
   "dependencies": {
+    "mocha": "^8.2.1",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node test-poke.js"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
