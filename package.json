@@ -1,0 +1,23 @@
+{
+  "name": "ussf-js-async-checkpoint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "poke.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test-poke.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chadnaylor/USSF-js-async-checkpoint.git"
+  },
+  "author": "Chad Naylor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chadnaylor/USSF-js-async-checkpoint/issues"
+  },
+  "homepage": "https://github.com/chadnaylor/USSF-js-async-checkpoint#readme"
+}
