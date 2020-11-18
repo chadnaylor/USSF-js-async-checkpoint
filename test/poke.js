@@ -14,9 +14,15 @@ describe('Poke', function () {
             )
         });
         it('should return a promise that eventually returns an array', () => {
-            process.argv[0] = '../input.txt'
-            poke.getTypes().then((result) => {
+            process.argv[0] = 'input.txt'
+            return poke.getTypes().then((result) => {
                 assert.strictEqual(true, Array.isArray(result))
+            })
+        });
+        it('should have correct pokemon types', () => {
+            process.argv[0] = 'input.txt'
+            return poke.getTypes().then((result) => {
+                assert.strictEqual('electric', result[1].type)
             })
         })
     });
