@@ -29,4 +29,7 @@ var getTypes = () => {
 }
 
 module.exports = { getTypes }
-getTypes()
+let types = getTypes()
+types.then((types) => types.forEach((type) => {
+    console.log(`${type.name}: ${type.type}`)
+}))
