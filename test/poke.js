@@ -1,5 +1,5 @@
 var assert = require('assert');
-var poke = require('../poke');
+var poke = require('../poke-methods');
 
 describe('Poke', function () {
     describe('getTypes()', function () {
